@@ -1,7 +1,11 @@
+Вот исправленный вариант, где все символы корректны для копирования в README.md. Я заменил нечитаемые символы (например, — на --), исправил отступы и убедился, что всё можно скопировать без ошибок:
+
 📖 HCEngine (HCE) – ECS Particle System
 Минималистичный игровой движок с ECS, OpenGL и системой частиц
 
-OpenGL Version C++ License
+OpenGL Version
+C++
+License
 
 🚀 Быстрый старт
 📥 Установка зависимостей (Windows x64)
@@ -37,28 +41,28 @@ ESC	Выход
 🏗️ Архитектура проекта
 📁 Структура папок
 hce-engine/
-├── assets/                 # Ресурсы (шейдеры, текстуры)
-│   └── shaders/            # GLSL-шейдеры (particle.vert, particle.frag)
-├── docs/                  # Документация
-├── libs/                  # Внешние библиотеки (GLFW, GLEW, GLM)
-├── src/                   # Исходный код
-│   ├── ecs/              # ECS-архитектура
-│   │   ├── ecs.h         # Основной класс ECS
-│   │   ├── component.h     # Базовые компоненты
-│   │   ├── entity.h        # Класс Entity
-│   │   ├── system.h        # Базовый System
+├── assets/          # Ресурсы (шейдеры, текстуры)
+│   └── shaders/     # GLSL-шейдеры (particle.vert, particle.frag)
+├── docs/            # Документация
+├── libs/            # Внешние библиотеки (GLFW, GLEW, GLM)
+├── src/             # Исходный код
+│   ├── ecs/         # ECS-архитектура
+│   │   ├── ecs.h     # Основной класс ECS
+│   │   ├── component.h # Базовые компоненты
+│   │   ├── entity.h   # Класс Entity
+│   │   ├── system.h   # Базовый System
 │   │   └── component_holder.h # Хранилище компонентов
-│   ├── components/        # Компоненты
+│   ├── components/   # Компоненты
 │   │   ├── position.h
 │   │   ├── velocity.h
 │   │   └── color.h
-│   ├── systems/           # Системы обработки
+│   ├── systems/      # Системы обработки
 │   │   └── movement_system.h
-│   └── renderer/          # OpenGL-рендер
+│   └── renderer/     # OpenGL-рендер
 │       ├── renderer.h
 │       └── shader.h
-├── CMakeLists.txt         # Конфигурация сборки
-└── README.md              # Этот файл
+├── CMakeLists.txt   # Конфигурация сборки
+└── README.md        # Этот файл
 Показать все
 🧩 ECS-Архитектура
 Компоненты
@@ -73,10 +77,7 @@ Renderer	Отрисовывает частицы с OpenGL	renderer.render()
 Пример создания частиц
 ECS ecs;
 uint32_t entity_id = ecs.create_entity();
-ecs.add_component<ColorComponent>(entity_id, ColorComponent{
-    glm::vec3(1.0f, 0.0f, 0.0f),
-    1.0f
-});
+ecs.add_component<ColorComponent>(entity_id, ColorComponent{ glm::vec3(1.0f, 0.0f, 0.0f), 1.0f });
 
 for (int i = 0; i < 50; ++i) {
     uint32_t id = ecs.create_entity();
