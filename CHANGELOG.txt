@@ -1,0 +1,19 @@
+ECS Particle System - Changelog
+
+v1.0.0 (2024-XX-XX)
+- Первая версия проекта
+  - ECS-архитектура (Entity-Component-System)
+  - Движок на OpenGL (GLEW, GLFW)
+  - Поддержка камеры, зума, вращения частиц
+  - 50 анимированных частиц с цветом и движением
+  - CI/CD через GitHub Actions (сборка на Linux)
+  - Документация в README.md
+
+Файлы проекта:
+- src/ - Исходный код (ECS, системы, рендерер)
+- include/ - Заголовочные файлы
+- shaders/ - Шейдеры OpenGL
+- .gitignore - Исключения для Git
+- README.md - Документация
+- CHANGELOG.txt - История изменений
+- .github/workflows/build.yml - CI/CD (сборка)
