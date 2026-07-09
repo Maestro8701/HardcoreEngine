@@ -1,0 +1,20 @@
+cat > .gitignore << 'EOF'
+# Build files
+build/
+*.o
+*.exe
+*.out
+*.a
+*.so
+
+# IDE files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Git
+*.orig
+EOF

@@ -1,0 +1,33 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake libglfw3-dev libglew-dev
+
+      - name: Install GLM (header-only)
+        run: |
+          sudo apt-get install -y libglm-dev
+
+      - name: Configure CMake
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build project
+        run: cmake --build build --config Release -- -j$(nproc)
+
+      - name: Run tests (если есть)
+        run: |
+          cd build
+          ctest --output-on-failure
